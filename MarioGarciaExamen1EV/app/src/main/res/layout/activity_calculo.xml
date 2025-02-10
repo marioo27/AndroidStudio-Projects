@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#03A9F4"
+    tools:context=".ActivityCalculo">
+
+    <TextView
+        android:id="@+id/textViewPractica1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="32dp"
+        android:text="Practica 1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewPractica2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Practica 2"
+        app:layout_constraintStart_toStartOf="@+id/inPractica1"
+        app:layout_constraintTop_toBottomOf="@+id/inPractica1" />
+
+    <EditText
+        android:id="@+id/inPractica1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPractica1" />
+
+    <EditText
+        android:id="@+id/inPractica2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintStart_toStartOf="@+id/textViewPractica2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPractica2" />
+
+    <TextView
+        android:id="@+id/textViewExamen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Examen"
+        app:layout_constraintStart_toStartOf="@+id/inPractica2"
+        app:layout_constraintTop_toBottomOf="@+id/inPractica2" />
+
+    <EditText
+        android:id="@+id/inExamen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintStart_toStartOf="@+id/textViewExamen"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExamen" />
+
+    <TextView
+        android:id="@+id/outResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/inExamen"
+        app:layout_constraintTop_toBottomOf="@+id/inExamen" />
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="105dp"
+        android:backgroundTint="#03A9F4"
+        android:text="Calcular Nota"
+        android:textColorLink="#03A9F4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inExamen" />
+
+    <Button
+        android:id="@+id/buttonBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#03A9F4"
+        android:text="Borrar datos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcular" />
+
+    <CheckBox
+        android:id="@+id/checkRedondeo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="105dp"
+        android:text="Redondeo"
+        app:layout_constraintStart_toEndOf="@+id/buttonCalcular"
+        app:layout_constraintTop_toBottomOf="@+id/inExamen" />
+
+    <CheckBox
+        android:id="@+id/checkExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="18dp"
+        android:text="Excluir examen"
+        app:layout_constraintStart_toEndOf="@+id/buttonBorrar"
+        app:layout_constraintTop_toBottomOf="@+id/checkRedondeo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

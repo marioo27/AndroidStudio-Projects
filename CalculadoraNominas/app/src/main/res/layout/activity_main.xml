@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- TextViews -->
+    <TextView
+        android:id="@+id/textViewMgr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="365dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="MGR"
+        android:textColor="@android:color/holo_blue_bright"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIes" />
+
+    <TextView
+        android:id="@+id/textViewDias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="36dp"
+        android:text="Dias"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewHoras"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextDias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAmeri" />
+
+    <TextView
+        android:id="@+id/textViewHoras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="88dp"
+        android:text="Horas"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextHoras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAmeri" />
+
+    <TextView
+        android:id="@+id/textViewIes"
+        android:layout_width="140dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="630dp"
+        android:text="IES Ciudad Escolar"
+        android:textAlignment="center"
+        android:textColor="?attr/actionModeSplitBackground"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCnb" />
+
+    <TextView
+        android:id="@+id/textViewCnb"
+        android:layout_width="372dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="664dp"
+        android:text="Calculo de Nomina Basica"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="?attr/actionModeSplitBackground"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.164" />
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTintMode="add"
+        android:text="Calcular"
+        android:textAllCaps="true"
+        android:textColorLink="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBorrar"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextHoras" />
+
+    <Button
+        android:id="@+id/buttonBorrar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTintMode="add"
+        android:text="borrar"
+        android:textAllCaps="true"
+        android:textColorLink="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonCalcular"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextHoras" />
+
+    <!-- EditTexts -->
+    <EditText
+        android:id="@+id/editTextTextHoras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="60dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewHoras"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAmeri" />
+
+    <EditText
+        android:id="@+id/editTextTextDias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="19dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextHoras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewDias"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAmeri"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <!-- ImageView -->
+    <ImageView
+        android:id="@+id/imageViewAmeri"
+        android:layout_width="414dp"
+        android:layout_height="242dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="340dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMgr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIes"
+        app:srcCompat="@mipmap/ameri" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPago"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="87dp"
+        android:text="Pago"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxDescuento"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPago"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextHoras" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDescuento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="61dp"
+        android:layout_marginBottom="71dp"
+        android:text="Descuento"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPago" />
+
+    <TextView
+        android:id="@+id/textViewDescuento"
+        android:layout_width="82dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPago" />
+
+    <TextView
+        android:id="@+id/textViewPago"
+        android:layout_width="81dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDescuento"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupRedondeo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxDescuento" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupRedondeo"
+        android:layout_width="165dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="41dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBorrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxPago"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextHoras">
+
+        <RadioButton
+            android:id="@+id/radioButtonRedondeo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Redondeo" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDesRedondeo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Redondeo No" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,92 @@
+package com.example.examen1;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class ActivityCalculo extends AppCompatActivity {
+
+    private EditText inPractica1, inPractica2, inExamen;
+    private Button buttonCalcular, buttonBorrar;
+    private TextView outResultado;
+    private CheckBox checkBoxRedondeo, checkBoxExam;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_calculo);
+
+        inPractica1 = findViewById(R.id.EditTextPractica1);
+        inPractica2 = findViewById(R.id.EditTextPractica2);
+        inExamen = findViewById(R.id.EditTextExamen);
+
+        outResultado = findViewById(R.id.outResultado);
+
+        checkBoxRedondeo = findViewById(R.id.CheckBoxRedondeo);
+        checkBoxExam = findViewById(R.id.CheckBoxExamen);
+
+        buttonCalcular = findViewById(R.id.buttonCalcular);
+        buttonBorrar = findViewById(R.id.buttonBorrar);
+
+        buttonCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calcular();
+            }
+        });
+
+        buttonBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                borrarDatos();
+            }
+        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+
+    private void calcular(){
+        String p1 = inPractica1.getText().toString().trim();
+        String p2 = inPractica2.getText().toString().trim();
+        String e = inExamen.getText().toString().trim();
+        if (!p1.isEmpty()&&!p2.isEmpty()&&!e.isEmpty()){
+            try {
+                double
+                        x = Double.parseDouble(p1),
+                        y = Double.parseDouble(p2),
+                        z = Double.parseDouble(e),
+                        res = checkBoxExam.isChecked()?((x + y) / 2 ): ((x + y + z) / 3);
+                if (checkBoxRedondeo.isChecked()) {
+                    res = (double) Math.round(res);
+                }
+                outResultado.setText("Media: " + res);
+            } catch (NumberFormatException i){
+                outResultado.setText("Alguno de los valores no es un numero.");
+            }
+        }
+    }
+
+    private void borrarDatos(){
+        inExamen.setText("0");
+        inPractica1.setText("0");
+        inPractica2.setText("0");
+        outResultado.setText("");
+        checkBoxRedondeo.setChecked(false);
+        checkBoxExam.setChecked(false);
+    }
+
+}
